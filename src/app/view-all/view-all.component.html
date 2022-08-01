@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row p-4 m-4">
+    <div>
+      <b>Search : </b><input [(ngModel)]="filterNames" (ngModelChange)="filterTourists($event)">
+      &nbsp;&nbsp;&nbsp;
+    </div>
+    <div *ngIf="filterNames">
+      <button class="btn btn-primary mr-4" (click)="clearSearch()"> Clear</button>
+    </div>
+    <div>
+      {{filterNames}}
+    </div>
+  </div>
+
+  <div *ngFor="let t of tourists.reverse(); index as i">
+    <div class="row bg-info m-4 p-4">
+      <h1 class="col-md-2 align-self-center">
+        <b class="font-4">{{i + 1}}</b>
+      </h1>
+      <div class="card-body col-md-8">
+        <div class="card-title"><b> Name : </b>{{t.firstName + " " + t.lastName}} </div>
+        <div><b>Age : </b>{{t.age}}</div>
+        <div><b> Gender : </b>{{t.gender}}</div>
+        <div><b> From Place : </b>{{t.fromPlace}}</div>
+        <div><b>No of Days Visit : </b>{{t.noOfVisitDays}}</div>
+      </div>
+      <div class="col-md-2 bg-danger">
+        <img src="./assets/dustbin.jpg" (click)="deleteTourist(t.id)" style="height:175px" alt="">
+      </div>
+      <!--      <div class="col-md-2 align-self-center">-->
+      <!--        &nbsp;&nbsp;&nbsp;&nbsp;-->
+      <!--        <button (click)="refreshTourists()" class="btn btn-secondary" >&nbsp;&nbsp;&nbsp;&nbsp;  Refresh &nbsp;&nbsp;&nbsp;&nbsp;</button>-->
+      <!--      </div>-->
+    </div>
+  </div>
+  <div *ngIf="!tourists.length">
+    <h1 class="text-center"> {{dataStatus}} </h1>
+  </div>
+</div>

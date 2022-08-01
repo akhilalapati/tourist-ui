@@ -1,0 +1,32 @@
+<div class="container mt-4 ">
+  <div class="d-flex flex-row justify-content-around m-4">
+    <div> First Name : <input placeholder="First Name" [(ngModel)]="tourist.firstName"></div>
+    <div> Last Name : <input placeholder="Last Name" [(ngModel)]="tourist.lastName"></div>
+  </div>
+  <div class="d-flex flex-row justify-content-around m-4">
+    <div> From Place: <input placeholder="From Place" [(ngModel)]="tourist.fromPlace"></div>
+    <div> Noof Days Visit: <input placeholder="Noof Days Visit" [(ngModel)]="tourist.noOfVisitDays"></div>
+  </div>
+  <div class="d-flex flex-row justify-content-around m-4">
+    <div class="d-flex">Gender : &nbsp; &nbsp; &nbsp;
+      <input type="radio" value="male" name="gender" [(ngModel)]="tourist.gender"> Male &nbsp;
+      <input type="radio" value="female" name="gender" [(ngModel)]="tourist.gender"> Female
+    </div>
+    <div> Age: <input placeholder="Age" [(ngModel)]="tourist.age"></div>
+  </div>
+  <div [hidden]="notValid" class="container m-4">
+    Enter all the fields <br>
+    Note : FirstName should be 15 characters only <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LastName should be 12 characters only <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age and NooDaysVisit should be Number format <br>
+  </div>
+  <div [hidden]="buttonClick" class="text-center m-4">
+    Tourist Registration is Successfully Completed
+  </div>
+  <div class="text-center m-4">
+    <button class="btn btn-primary m-4" (click)="validateAndPost()" [disabled]="!fieldsFilled()"> Register
+    </button>
+    <button class="btn btn-primary m-4" (click)="clear()"> Clear
+    </button>
+  </div>
+</div>
