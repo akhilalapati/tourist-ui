@@ -1,18 +1,18 @@
-<div class="container mt-4 ">
-  <div class="d-flex flex-row justify-content-around m-4">
-    <div> First Name : <input placeholder="First Name" [(ngModel)]="tourist.firstName"></div>
-    <div> Last Name : <input placeholder="Last Name" [(ngModel)]="tourist.lastName"></div>
-  </div>
-  <div class="d-flex flex-row justify-content-around m-4">
-    <div> From Place: <input placeholder="From Place" [(ngModel)]="tourist.fromPlace"></div>
-    <div> Noof Days Visit: <input placeholder="Noof Days Visit" [(ngModel)]="tourist.noOfVisitDays"></div>
-  </div>
-  <div class="d-flex flex-row justify-content-around m-4">
-    <div class="d-flex">Gender : &nbsp; &nbsp; &nbsp;
+<div class="container">
+  <div class="text-center justify-content-around m-5">
+    <div class="m-3"> First Name : <input placeholder="First Name" [(ngModel)]="tourist.firstName"></div>
+    <div class="m-3"> Last Name : <input placeholder="Last Name" [(ngModel)]="tourist.lastName"></div>
+<!--  </div>-->
+<!--  <div class="row-6 justify-content-around m-4">-->
+    <div class="m-3"> From Place: <input placeholder="From Place" [(ngModel)]="tourist.fromPlace"></div>
+    <div class="m-3"> Noof Days Visit: <input placeholder="Noof Days Visit" [(ngModel)]="tourist.noOfVisitDays"></div>
+<!--  </div>-->
+<!--  <div class="row-6 justify-content-around m-4">-->
+    <div class="m-3" >Gender : &nbsp; &nbsp; &nbsp;
       <input type="radio" value="male" name="gender" [(ngModel)]="tourist.gender"> Male &nbsp;
       <input type="radio" value="female" name="gender" [(ngModel)]="tourist.gender"> Female
     </div>
-    <div> Age: <input placeholder="Age" [(ngModel)]="tourist.age"></div>
+    <div class="m-3"> Age: <input placeholder="Age" [(ngModel)]="tourist.age"></div>
   </div>
   <div [hidden]="notValid" class="container m-4">
     Enter all the fields <br>
