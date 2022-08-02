@@ -11,7 +11,8 @@ export class TouristService {
   constructor(public httpclient: HttpClient) {
   }
 
-  baseUrl = "http://localhost:8080/api";
+  // baseUrl = "http://localhost:8080/api";
+  baseUrl = "https://tourist-service.herokuapp.com/api"
 
   getAllTourists(): Observable<Tourist[]> {
     return this.httpclient.get<Tourist[]>(this.baseUrl + '/all-tourists');

@@ -35,9 +35,16 @@ export class RegistrationComponent implements OnInit {
     }
     this.touristService
       .saveTourist(this.tourist)
-      .subscribe();
-
-    this.wantView.emit('View All');
+      .subscribe(response => {
+          this.wantView.emit('View All');
+          // if (response.id > 0) {
+          //   this.buttonClick = false;
+          //
+          // } else {
+          //   error("excpetion while saving Tourist");
+          // }
+        }
+      );
   }
 
   fieldsFilled() {
