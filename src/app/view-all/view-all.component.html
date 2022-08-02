@@ -25,7 +25,10 @@
         <div><b>No of Days Visit : </b>{{t.noOfVisitDays}}</div>
       </div>
       <div class="col-md-2 bg-danger">
-        <img src="./assets/dustbin.jpg" (click)="deleteTourist(t.id)" style="height:175px" alt="">
+        <div class="text-center">
+          <img src="./assets/dustbin.jpg"
+               (click)="deleteTourist(t.id)" style="height:175px" alt="">
+        </div>
       </div>
       <!--      <div class="col-md-2 align-self-center">-->
       <!--        &nbsp;&nbsp;&nbsp;&nbsp;-->
