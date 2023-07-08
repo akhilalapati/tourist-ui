@@ -12,7 +12,7 @@ export class TouristService {
   }
 
   // baseUrl = "http://localhost:8080/api";
-  baseUrl = "https://tourist-service.herokuapp.com/api"
+  baseUrl = "https://tourist-service.onrender.com/api"
 
   getAllTourists(): Observable<Tourist[]> {
     return this.httpclient.get<Tourist[]>(this.baseUrl + '/all-tourists');
